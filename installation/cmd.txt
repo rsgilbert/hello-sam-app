@@ -28,3 +28,14 @@ sam local generate-event apigateway aws-proxy --body "Hey" --path "hello" --meth
 
 // delete stack 
 aws cloudformation delete-stack --stack-name sam-app --region af-south-1
+
+
+
+
+
+
+
+
+
+
+
