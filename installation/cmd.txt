@@ -6,3 +6,25 @@ brew install aws-sam-cli
 sam --version
 
 // download sample aws sam application
+sam init 
+// build application
+cd sam-app 
+sam build 
+
+// deploy application to AWS cloud 
+sam deploy --guided
+
+// host api locally
+sam local start-api 
+curl http://localhost:3000/hello
+
+// invoke lambda directly
+sam local invoke HelloWorldFunction 
+sam local invoke HelloWorldFunction -e events/event.json 
+
+// generate own input event 
+sam local generate-event apigateway aws-proxy --body "Hey" --path "hello" --method GET > events/my-api-event.json
+
+
+// delete stack 
+aws cloudformation delete-stack --stack-name sam-app --region af-south-1
